@@ -1,0 +1,5 @@
+package ar.com.codoacodo.interfaces;
+
+public class FSILogger {
+
+}

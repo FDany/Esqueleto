@@ -1,0 +1,19 @@
+package ar.com.codoacodo.interfaces;
+
+public class MainLogger {
+
+	public static void main(String[] args) {
+		
+		String target = getTargetFromDB();
+		
+		ILogger logger = LoggerManager.getLogger(target);
+		
+		//((SMSLogger) logger).setNumber("543876151176");
+		logger.log();
+		
+	}
+	
+	public static String getTargetFromDB() {
+		return "C";
+	}
+}

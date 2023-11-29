@@ -1,0 +1,10 @@
+package ar.com.codoacodo.interfaces;
+
+public class SMSLogger implements ILogger {
+
+	
+	public void log() {
+		
+	}
+
+}

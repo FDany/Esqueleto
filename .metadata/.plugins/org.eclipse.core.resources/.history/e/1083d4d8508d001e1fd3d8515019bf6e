@@ -1,0 +1,37 @@
+package ar.com.codoacodo.repository;
+
+import java.sql.Date;
+import java.time.LocalDate;
+
+import ar.com.codoacodo.entity.Orador;
+
+public class MainRepository {
+
+	public static void main(String[] args) {
+
+		OradorRepository repository = new MysqlOradorRepository();
+		
+		// obtener un orador desde la db
+		//Orador orador = repository.getById(3L);
+		
+		//System.out.println(orador);
+		
+		/*
+		Orador o = new Orador("Mariano", "Pages", "ejemplo@gmail.com","react",LocalDate.now());
+		repository.save(o);
+		
+		System.out.println(o);
+		*/
+		
+		Date aux = java.sql.Date.valueOf( LocalDate.now() );
+		aux.setHours(aux.getHours());
+		aux.setMinutes(aux.getMinutes());
+		aux.setSeconds(aux.getSeconds());
+		
+		System.out.println(aux);
+		
+		
+		System.out.println(LocalDate.now());
+	}
+
+}

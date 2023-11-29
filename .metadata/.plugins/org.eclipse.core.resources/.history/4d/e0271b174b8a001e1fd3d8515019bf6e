@@ -1,0 +1,11 @@
+package ar.com.codoacodo.interfaces;
+
+public class SMSLogger implements ILogger {
+
+	@Override
+	public void log() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

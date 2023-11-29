@@ -1,0 +1,17 @@
+package ar.com.codoacodo.repository;
+
+import ar.com.codoacodo.entity.Orador;
+
+public class MainRepository {
+
+	public static void main(String[] args) {
+
+		OradorRepository repository = new MysqlOradorRepository();
+		
+		// obtener un orador desde la db
+		Orador orador = repository.getById(3L);
+		
+		System.out.println(orador);
+	}
+
+}

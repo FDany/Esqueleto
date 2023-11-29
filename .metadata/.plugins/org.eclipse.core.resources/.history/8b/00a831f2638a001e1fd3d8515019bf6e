@@ -1,0 +1,39 @@
+package ar.com.codoacodo.repository;
+
+import java.util.List;
+
+import ar.com.codoacodo.entity.Orador;
+
+public class MysqlOradorRepository implements OradorRepository{
+
+
+	public void save(Orador orador) {
+		
+	}
+
+	
+	public Orador getById(Long id) {
+		
+		return null;
+	}
+
+	
+	public void update(Orador orador) {
+		
+		
+	}
+
+	
+	public void delete(Long id) {
+		
+		
+	}
+
+	
+	public List<Orador> findAll() {
+		
+		return null;
+	}
+
+	
+}

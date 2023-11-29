@@ -1,0 +1,17 @@
+package ar.com.codoacodo.interfaces;
+
+public class MainLogger {
+
+	public static void main(String[] args) {
+		
+		String target = getTargetFromDB();
+		
+		ILogger logger = LoggerManager.getLogger(target);
+		
+		logger.log();
+	}
+	
+	public static String getTargetFromDB() {
+		return "A";
+	}
+}
