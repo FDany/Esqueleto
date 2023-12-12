@@ -3,7 +3,6 @@
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="ar.com.codoacodo.herencia.Pelicula"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="ar.com.codoacodo.repository.AdministradorDeConexiones"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -27,4 +26,12 @@
     <fullyQualifiedTypeName name="ar.com.codoacodo.entity.Orador"/>
     <fullyQualifiedTypeName name="ar.com.codoacodo.repository.OradorRepository"/>
     <fullyQualifiedTypeName name="ar.com.codoacodo.repository.MysqlOradorRepository"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.Filter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebFilter"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.SerializationFeature"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

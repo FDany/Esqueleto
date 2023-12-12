@@ -171,8 +171,9 @@ public class MysqlOradorRepository implements OradorRepository{
 				Long dbId = res.getLong(1);
 				String nombre = res.getString(2);
 				String apellido = res.getString(3);
-				String tema = res.getString(4);
-				String email = res.getString(5);
+				String email = res.getString(4);
+				String tema = res.getString(5);
+				
 				
 				LocalDate fechaAlta = DateUtils.asLocalDate(res.getDate(6));  
 				/*
