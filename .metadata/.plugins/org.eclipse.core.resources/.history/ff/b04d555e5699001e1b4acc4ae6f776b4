@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/api/orador")
 public class NuevoOradorController extends HttpServlet{
-	
+	private OradorRepository repository = new MysqlOradorRepository();
 	
 	protected void doPost(
 			HttpServletRequest request, // viene lo que manda el usuario
@@ -65,9 +65,9 @@ public class NuevoOradorController extends HttpServlet{
 		);
 		
 		//ahora por medio del repository guarda en la db
-		OradorRepository repository = new MysqlOradorRepository();
+		//OradorRepository repository = new MysqlOradorRepository();
 		
-		repository.save(nuevo);
+		this.repository.save(nuevo);
 		
 		//ahora respondo al front: json, Convirtiendo el nuevo Orador a json
 		String jsonParaEnviarALFrontend = mapper.writeValueAsString(nuevo);
@@ -89,8 +89,8 @@ public class NuevoOradorController extends HttpServlet{
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		//ahora por medio del repository guarda en la db
-		OradorRepository repository = new MysqlOradorRepository();
-		List<Orador> listado = repository.findAll();
+		//OradorRepository repository = new MysqlOradorRepository();
+		List<Orador> listado = this.repository.findAll();
 		
 		//convierto Objecto java a json string
 		ObjectMapper mapper = new ObjectMapper();
@@ -109,10 +109,43 @@ public class NuevoOradorController extends HttpServlet{
 		
 		String id = request.getParameter("id");
 		
-		OradorRepository repository = new MysqlOradorRepository();
-		repository.delete(Long.parseLong(id));
+		//OradorRepository repository = new MysqlOradorRepository();
+		this.repository.delete(Long.parseLong(id));
 		
 		response.setStatus(HttpServletResponse.SC_OK);//200
 		
+	}
+	
+	protected void doPut(
+			HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		
+		String id = request.getParameter("id");
+		
+		// ahora quiero los datos que vienen en el body del modal
+		String json = request.getReader()
+				.lines()
+				.collect(Collectors.joining(System.lineSeparator()));
+		
+		
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(new JavaTimeModule());
+		mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+		
+		OradorRequest oradorRequest = mapper.readValue(json, OradorRequest.class);
+		
+		
+		// BUSCO EL ORADOR EN LA DB
+		Orador orador = this.repository.getById(Long.parseLong(id));
+		
+		orador.setNombre(oradorRequest.getNombre());
+		orador.setApellido(oradorRequest.getApellido());
+		orador.setMail(oradorRequest.getEmail());
+		orador.setTema(oradorRequest.getTema());
+		
+		// AHORA, ACTUALIZO EN LA DB!
+		this.repository.update(orador);
+		
+		response.setStatus(HttpServletResponse.SC_OK);
 	}
 }

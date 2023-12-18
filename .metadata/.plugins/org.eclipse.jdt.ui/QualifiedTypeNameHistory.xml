@@ -28,10 +28,10 @@
     <fullyQualifiedTypeName name="ar.com.codoacodo.repository.MysqlOradorRepository"/>
     <fullyQualifiedTypeName name="jakarta.servlet.Filter"/>
     <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebFilter"/>
-    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.datatype.jsr310.JavaTimeModule"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.SerializationFeature"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>
